@@ -22,7 +22,9 @@ jobs:
 
     - name: Build docker 
       run: |
-        ls
+        docker build -t madhur14/flaskapp .
+        docker login -u madhur14 -p iacsd@123
+        docker push madhur14/flaskapp
         
 
     - name: Configure to EKS
