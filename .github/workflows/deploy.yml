@@ -38,5 +38,6 @@ jobs:
         kubectl apply -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
         kubectl get all
         kubectl get pods
+        kubectl get svc
 
 
