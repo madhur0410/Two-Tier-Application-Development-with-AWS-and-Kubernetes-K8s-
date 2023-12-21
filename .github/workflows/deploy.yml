@@ -26,8 +26,8 @@ jobs:
         aws eks update-kubeconfig --region ca-central-1 --name my-cluster
         kubectl get ns
         ls
-        kubectl apply -f mysql-secrets.yml -f mysql-configmap.yml -f mysql-deployment.yml -f mysql-svc.yml
-        kubectl apply -f two-tier-app-deployment.yml -f two-tier-app-svc.yml
+        kubectl apply -f eks-manifests/mysql-secrets.yml -f eks-manifests/mysql-configmap.yml -f eks-manifests/mysql-deployment.yml -f eks-manifests/mysql-svc.yml
+        kubectl apply -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
         kubectl get all
         kubectl get pods
 
