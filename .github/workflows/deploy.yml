@@ -29,7 +29,7 @@ jobs:
 
     - name: Configure to EKS
       run: |
-        aws eks update-kubeconfig --region ca-central-1 --name my-cluster
+        aws eks update-kubeconfig --region us-east-1 --name my-cluster
         kubectl get ns
         kubectl delete -f eks-manifests/mysql-secrets.yml -f eks-manifests/mysql-configmap.yml -f eks-manifests/mysql-deployment.yml -f eks-manifests/mysql-svc.yml
         kubectl delete -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
