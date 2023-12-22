@@ -22,6 +22,6 @@ jobs:
         run: npm install -g snyk
 
       - name: Run Snyk test
-        run: snyk test
+        run: snyk test --org=org --file=requirements.txt -- --allow-missing
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
