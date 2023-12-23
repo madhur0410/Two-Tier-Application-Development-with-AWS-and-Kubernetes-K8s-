@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo... App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>ToDo App...</h1>
+    <div class="container">
+    <div class="todo-app">
+    <h2>ToDo App...</h2>
     <form action="/add" method="post">
-        <input type="text" name="description" required>
-        <button type="submit">Add Task</button>
+        <div class="row">
+        <input type="text" name="description" required id="input-box" placeholder="Add your tasks">
+        <button type="submit">Add</button>
+        </div>
     </form>
-    <ul>
+    <ul id="list-container">
         {% for task in tasks %}
             <li>
                 {% if task[2] == 0 %}
                     {{ task[1] }}
-                    <a href="{{ url_for('complete', task_id=task[0]) }}">Complete</a>
+                    <a href="{{ url_for('complete', task_id=task[0]) }}">DONE <span>&#10004;</span></a>
                 {% else %}
                     <del>{{ task[1] }}</del>
                 {% endif %}
-                <a href="{{ url_for('delete', task_id=task[0]) }}">Delete</a>
+                <a href="{{ url_for('delete', task_id=task[0]) }}">DELETE <span>&#10008;</span></a>
             </li>
         {% endfor %}
     </ul>
+    </div>
+    </div>
 </body>
 </html>
