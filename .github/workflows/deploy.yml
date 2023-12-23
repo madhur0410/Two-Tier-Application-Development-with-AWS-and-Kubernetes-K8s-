@@ -31,8 +31,8 @@ jobs:
       run: |
         aws eks update-kubeconfig --region us-west-2 --name my-cluster
         kubectl get ns
-        kubectl delete -f eks-manifests/mysql-secrets.yml -f eks-manifests/mysql-configmap.yml -f eks-manifests/mysql-deployment.yml -f eks-manifests/mysql-svc.yml
-        kubectl delete -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
+        #kubectl delete -f eks-manifests/mysql-secrets.yml -f eks-manifests/mysql-configmap.yml -f eks-manifests/mysql-deployment.yml -f eks-manifests/mysql-svc.yml
+        #kubectl delete -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
 
         kubectl apply -f eks-manifests/mysql-secrets.yml -f eks-manifests/mysql-configmap.yml -f eks-manifests/mysql-deployment.yml -f eks-manifests/mysql-svc.yml
         kubectl apply -f eks-manifests/two-tier-app-deployment.yml -f eks-manifests/two-tier-app-svc.yml
